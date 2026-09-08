@@ -3,6 +3,7 @@
 <main>
   <section class="page-header">
     <h1><%= title %></h1>
+
     <p>
       Meet the partner organizations that provide meaningful
       service opportunities in our communities.
@@ -12,50 +13,32 @@
   <section class="organizations">
     <div class="card-grid">
 
-      <article class="organization-card">
-        <img
-          src="/images/brightfuture-logo.png"
-          alt="Bright Future organization logo"
-        >
+      <% organizations.forEach((organization) => { %>
 
-        <div class="card-content">
-          <h2>Bright Future</h2>
-          <p>
-            Supporting students and families through tutoring,
-            mentoring, and educational service opportunities.
-          </p>
-        </div>
-      </article>
+        <article class="organization-card">
 
-      <article class="organization-card">
-        <img
-          src="/images/greenharvest-logo.png"
-          alt="Green Harvest organization logo"
-        >
+          <img
+            src="/images/<%= organization.logo_filename %>"
+            alt="<%= organization.name %> organization logo"
+          >
 
-        <div class="card-content">
-          <h2>Green Harvest</h2>
-          <p>
-            Bringing volunteers together for environmental
-            projects, community gardens, and conservation efforts.
-          </p>
-        </div>
-      </article>
+          <div class="card-content">
 
-      <article class="organization-card">
-        <img
-          src="/images/unityserve-logo.png"
-          alt="Unity Serve organization logo"
-        >
+            <h2><%= organization.name %></h2>
 
-        <div class="card-content">
-          <h2>Unity Serve</h2>
-          <p>
-            Connecting volunteers with community service projects
-            that support individuals and families in need.
-          </p>
-        </div>
-      </article>
+            <p>
+              <%= organization.description %>
+            </p>
+
+            <p>
+              <strong>Contact:</strong>
+              <%= organization.contact_email %>
+            </p>
+
+          </div>
+        </article>
+
+      <% }); %>
 
     </div>
   </section>
