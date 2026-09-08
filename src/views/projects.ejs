@@ -11,31 +11,17 @@
 
   <section class="featured">
     <div class="card-grid">
-
-      <article class="project-card">
-        <h2>Community Park Cleanup</h2>
-        <p>
-          Help improve local parks and public spaces through
-          cleanup and conservation efforts.
-        </p>
-      </article>
-
-      <article class="project-card">
-        <h2>After-School Tutoring</h2>
-        <p>
-          Support students with reading, homework, and
-          educational mentoring.
-        </p>
-      </article>
-
-      <article class="project-card">
-        <h2>Community Food Drive</h2>
-        <p>
-          Help collect and organize food donations for
-          individuals and families in need.
-        </p>
-      </article>
-
+      
+      <% projects.forEach((project) => { %>  
+        
+        <article class="project-card">
+          <h2><%= project.name %></h2>
+          <p>
+            <%= project.description %>
+          </p>
+        </article>
+      <% }); %> 
+          
     </div>
   </section>
 </main>
