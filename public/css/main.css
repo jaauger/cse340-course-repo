@@ -224,12 +224,21 @@ main {
   gap: 1.5rem;
 }
 
+.featured .card-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
 
+@media (max-width: 900px) {
+  .featured .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 /* =========================
    Project cards
    ========================= */
 
 .project-card {
+  position: relative;
   padding: 1.75rem;
   background-color: #ffffff;
   border: 1px solid #dde4ea;
@@ -238,19 +247,45 @@ main {
 }
 
 .project-card h2 {
+  margin: 0.25rem 0 0.35rem;
+  color: #17324d;
   font-size: 1.25rem;
   line-height: 1.35;
 }
 
-.project-card h3 {
-  margin-top: 0;
-  margin-bottom: 0.75rem;
-  color: #17324d;
+.project-date {
+  margin: 0;
+  color: #52606d;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 
-.project-card p {
-  margin-bottom: 0;
+.project-organization {
+  margin: 0 0 1.25rem;
+  color: #287271;
+  font-size: 0.95rem;
+  font-style: italic;
+}
+
+.project-description {
+  margin: 0 0 1rem;
   color: #52606d;
+}
+
+.project-location {
+  margin: 0;
+  color: #52606d;
+}
+
+.project-card-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.organization-link {
+  position: relative;
+  z-index: 1;
 }
 
 
@@ -348,6 +383,9 @@ button:focus-visible {
 
 @media (max-width: 700px) {
 
+  .featured .card-grid {
+  grid-template-columns: 1fr;
+  }
   nav {
     padding: 0.5rem 1rem;
   }

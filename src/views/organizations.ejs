@@ -8,6 +8,7 @@
       Meet the partner organizations that provide meaningful
       service opportunities in our communities.
     </p>
+    
   </section>
 
   <section class="organizations">
@@ -24,7 +25,11 @@
 
           <div class="card-content">
 
-            <h2><%= organization.name %></h2>
+            <h2>
+              <a href="/organization/<%= organization.organization_id %>">
+                <%= organization.name %>
+              </a>
+            </h2>
 
             <p>
               <%= organization.description %>
