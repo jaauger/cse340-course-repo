@@ -26,7 +26,15 @@
             <strong>Location:</strong>
             <%= project.location %>
         </p>
-
+        
+        <p>
+            <strong>Categories: </strong>
+            <% categories.forEach((category) => { %>
+                <a class="category-tag" href="/category/<%= category.category_id %>">
+                    <%= category.name %>
+                </a>
+            <% }); %>
+        </p>  
         <p>
             <strong>Partner Organization:</strong>
             <a href="/organization/<%= project.organization_id %>">

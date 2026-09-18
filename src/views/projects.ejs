@@ -15,8 +15,7 @@
       <% projects.forEach((project) => { %>
 
         <article class="project-card">
-
-          <h2>
+          
             <p class="project-date">
               <%= new Date(project.date).toLocaleDateString('en-US', {
                   year: 'numeric',
@@ -42,8 +41,7 @@
               >
                   <%= project.organization_name %>
               </a>
-          </p>
-        </h2>
+          </p>        
         
           <p>
               <%= project.description %>
