@@ -9,6 +9,8 @@
     </p>
   </section>
 
+  <p><a href="/new-project">Add a New Service Project</a></p>
+  
   <section class="featured">
     <div class="card-grid">
 
@@ -51,6 +53,13 @@
               <strong>Location:</strong>
               <%= project.location %>
           </p>
+
+          <p><a class="edit-categories-link"
+                href="/assign-categories/<%= project.project_id %>">Edit Categories</a></p>
+
+          <p><a class="edit-categories-link"
+                href="/edit-project/<%= project.project_id %>">Edit Project</a></p>      
+  
         
       </article>
 

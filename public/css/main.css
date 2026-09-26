@@ -366,6 +366,10 @@ main {
     text-decoration: underline;
 }
 
+.edit-categories-link {
+    position: relative;
+    z-index: 1;
+}
 /* =========================
    Footer
    ========================= */

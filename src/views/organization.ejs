@@ -2,6 +2,8 @@
 <main>
     <h1><%= title %></h1>
 
+    <p><a href="/edit-organization/<%= organizationDetails.organization_id %>">Edit Organization</a></p> 
+
     <h2><%= organizationDetails.name %></h2>
     <img src="/images/<%= organizationDetails.logo_filename %>" alt="<%= organizationDetails.name %> logo">
 
@@ -14,4 +16,4 @@
         <% }) %>
     </ul>
 </main>
-<%- include('partials/footer') %>
+<%- include('partials/footer') %> 
