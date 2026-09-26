@@ -10,7 +10,11 @@
     </p>
     
   </section>
-
+    <div class="page-actions">
+    <a href="/new-organization" class="button primary">
+      Add a New Organization
+    </a>
+  </div>
   <section class="organizations">
     <div class="card-grid">
 
@@ -40,15 +44,22 @@
               <%= organization.contact_email %>
             </p>
 
+            <div class="card-actions">
+              <a
+                href="/edit-organization/<%= organization.organization_id %>"
+                class="card-action"
+              >
+                Edit Organization
+              </a>
+            </div>
           </div>
+          
         </article>
 
       <% }); %>
 
     </div>
-  </section>
-
-  <p><a href="/new-organization">Add a new organization</a></p>
+  </section> 
   
 </main>
 

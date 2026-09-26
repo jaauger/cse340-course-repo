@@ -9,22 +9,38 @@
     </p>
   </section>
 
+  <div class="page-actions">
+    <a href="/new-category" class="button primary">
+      Add a New Category
+    </a>
+  </div>
+
   <section class="categories">
     <div class="card-grid">
-        
+
       <% categories.forEach((category) => { %>
         <article class="category-card">
-            <h2>
-              <a href="/category/<%= category.category_id %>">
-                <%= category.name %> 
-              </a>               
-            </h2>
-            <p>
-                <%= category.description %>
-            </p>        
-        </article>
+          <h2>
+            <a href="/category/<%= category.category_id %>">
+              <%= category.name %>
+            </a>
+          </h2>
 
-      <% }); %>        
+          <p>
+            <%= category.description %>
+          </p>
+
+          <div class="card-actions">
+            <a
+              href="/edit-category/<%= category.category_id %>"
+              class="card-action"
+            >
+              Edit Category
+            </a>
+          </div>
+        </article>
+      <% }); %>
+
     </div>
   </section>
 </main>

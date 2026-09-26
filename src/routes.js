@@ -14,13 +14,13 @@ import { showProjectsPage,
 import { showCategoriesPage,
          showCategoryDetailsPage,
          showAssignCategoriesForm,
-         processAssignCategoriesForm
+         processAssignCategoriesForm,
+         showNewCategoryForm,
+         showEditCategoryForm,
+         processNewCategoryForm,
+         processEditCategoryForm,
+         categoryValidation
 } from './controllers/categories.js';
-
-import { processEditOrganizationForm
-
- } from './controllers/organizations.js';
-
 
 import {
     showOrganizationsPage,
@@ -28,7 +28,8 @@ import {
     showNewOrganizationForm,
     processNewOrganizationForm,
     organizationValidation,
-    showEditOrganizationForm
+    showEditOrganizationForm,
+    processEditOrganizationForm
 } from './controllers/organizations.js';
 
 
@@ -51,13 +52,17 @@ router.get('/edit-project/:id', showEditProjectForm);
 
 router.get('/categories', showCategoriesPage);
 router.get('/category/:id', showCategoryDetailsPage);
+router.get('/new-category', showNewCategoryForm);
+router.get('/edit-category/:id', showEditCategoryForm);
 
 // Route to handle new organization form submission
 router.post('/new-organization', organizationValidation, processNewOrganizationForm);
-router.post('/edit-organization/:id', processEditOrganizationForm);
+router.post('/edit-organization/:id', organizationValidation, processEditOrganizationForm);
 router.post('/new-project', projectValidation, processNewProjectForm);
 router.post('/assign-categories/:projectId', processAssignCategoriesForm);
-router.post('/edit-project/:id', processEditProjectForm);
+router.post('/edit-project/:id', projectValidation, processEditProjectForm);
+router.post('/new-category', categoryValidation, processNewCategoryForm);
+router.post('/edit-category/:id', categoryValidation, processEditCategoryForm);
 
 
 // error-handling routes
