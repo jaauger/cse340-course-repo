@@ -1,12 +1,40 @@
 <%- include('partials/header') %>
 
 <main>
-    <h1><%= title %></h1>
+    <section class="page-header">
+        <h1><%= title %></h1>
+        <p>Welcome, <%= name %>.</p>
+    </section>
 
-    <h2>Dashboard</h2>
-    <p>Name: <%= name %></p>
-    <p>Username: <%= email %></p>
+    <section class="account-panel">
+        <h2>Account Information</h2>
 
+        <div class="account-details">
+            <div class="account-detail">
+                <span class="account-label">Name</span>
+                <span><%= name %></span>
+            </div>
+
+            <div class="account-detail">
+                <span class="account-label">Email</span>
+                <span><%= email %></span>
+            </div>
+
+            <div class="account-detail">
+                <span class="account-label">Role</span>
+                <span><%= role %></span>
+            </div>
+        </div>
+    </section>
+
+    <% if (role === 'admin') { %>
+        <section class="admin-panel">
+        <h2>Administration</h2>
+        <p>Manage administrative features for the system.</p>
+
+        <a href="/users" class="button primary">System Users</a>
+    </section>
+    <% } %>
 </main>
 
 <%- include('partials/footer') %>

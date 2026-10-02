@@ -1,0 +1,37 @@
+<%- include('partials/header', { title }) %>
+
+<main>
+    <section class="page-header">
+    <h1><%= title %></h1>
+    <p>
+      Users currently in the System.
+    </p> 
+  </section>
+
+  <section class="featured">
+
+        <table class="users-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                </tr>
+            </thead>
+        
+            <tbody>
+                <% users.forEach((user) => { %>
+                    <tr>
+                        <td><%= user.name %></td>
+                        <td><%= user.email %></td>
+                        <td><%= user.role_name %></td>    
+                    </tr>        
+
+                <% }); %>
+            </tbody>
+        </table>
+  </section>  
+
+</main>
+
+<%- include('partials/footer') %>

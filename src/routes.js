@@ -41,7 +41,8 @@ import { showUserRegistrationForm,
          processLogout,
          requireLogin,
          showDashboard,
-         requireRole
+         requireRole,
+         showUsersPage
 } from './controllers/users.js';
 
 const router = express.Router();
@@ -70,6 +71,8 @@ router.get('/register', showUserRegistrationForm);
 router.get('/login', showLoginForm);
 
 router.get('/logout', processLogout);
+
+router.get('/users', requireLogin, requireRole('admin'), showUsersPage);
 
 // Route to handle new organization form submission
 router.post('/new-organization', requireRole('admin'), organizationValidation, processNewOrganizationForm);

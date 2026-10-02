@@ -536,7 +536,115 @@ form button[type="submit"]:focus {
   text-decoration: underline;
 }
 
+/* =========================
+   Users table
+   ========================= */
 
+.users-table {
+  width: 100%;
+  overflow: hidden;
+  background-color: #ffffff;
+  border: 1px solid #dde4ea;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 14px;
+  box-shadow: 0 5px 18px rgb(0 0 0 / 6%);
+}
+
+.users-table th,
+.users-table td {
+  padding: 1rem 1.25rem;
+  text-align: left;
+  border-bottom: 1px solid #dde4ea;
+}
+
+.users-table th {
+  background-color: #17324d;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.users-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.users-table tbody tr:hover {
+  background-color: #f2f5f7;
+}
+
+.users-table td:last-child {
+  color: #287271;
+  font-weight: 700;
+
+}
+
+/* =========================
+   Account information
+   ========================= */
+
+.account-panel {
+  max-width: 750px;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  background-color: #ffffff;
+  border: 1px solid #dde4ea;
+  border-radius: 14px;
+  box-shadow: 0 5px 18px rgb(0 0 0 / 6%);
+}
+
+.account-panel h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: #17324d;
+}
+
+.account-details {
+  display: grid;
+  gap: 1rem;
+}
+
+.account-detail {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #dde4ea;
+}
+
+.account-detail:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.account-label {
+  color: #52606d;
+  font-weight: 700;
+}
+
+/* =========================
+   Administration panel
+   ========================= */
+
+.admin-panel {
+  max-width: 750px;
+  padding: 2rem;
+  background-color: #ffffff;
+  border: 1px solid #dde4ea;
+  border-radius: 14px;
+  box-shadow: 0 5px 18px rgb(0 0 0 / 6%);
+}
+
+.admin-panel h2 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: #17324d;
+}
+
+.admin-panel p {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: #52606d;
+}
 /* =========================
    Footer
    ========================= */
@@ -617,5 +725,10 @@ button:focus-visible {
 
   .organization-card img {
     height: 160px;
+  }
+  .users-table th,
+  .users-table td {
+    padding: 0.75rem;
+    font-size: 0.9rem;
   }
 }
