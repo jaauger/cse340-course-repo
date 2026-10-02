@@ -79,7 +79,7 @@ const processLogout = async (req, res) => {
 const showDashboard = async (req, res) => {
     const user = req.session.user;
 
-    res.render('dashBoard', {
+    res.render('dashboard', {
         title: 'Dashboard',
         name: user.name,
         email: user.email,
