@@ -10,9 +10,11 @@
   </section>
 
   <div class="page-actions">
+    <% if (user && user.role_name === 'admin') { %>
       <a href="/new-project" class="button primary">
         Add a New Service Project
       </a>
+    <% } %>  
     </div>
   
   <section class="featured">
@@ -59,19 +61,22 @@
           </p>
 
           <div class="card-actions">
+            <% if (user && user.role_name === 'admin') { %>
               <a
                 class="card-action"
                 href="/edit-project/<%= project.project_id %>"
               >
                 Edit Project
               </a>
-          
+            <% } %>
+            <% if (user && user.role_name === 'admin') { %>  
               <a
                 class="card-action"
                 href="/assign-categories/<%= project.project_id %>"
               >
                 Edit Categories
               </a>
+            <% } %>  
             </div> 
   
         

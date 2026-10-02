@@ -11,9 +11,12 @@
     
   </section>
     <div class="page-actions">
-    <a href="/new-organization" class="button primary">
-      Add a New Organization
-    </a>
+
+      <% if (user && user.role_name === 'admin') { %>
+        <a href="/new-organization" class="button primary">
+          Add a New Organization
+        </a>
+      <% } %>
   </div>
   <section class="organizations">
     <div class="card-grid">
@@ -45,12 +48,13 @@
             </p>
 
             <div class="card-actions">
-              <a
-                href="/edit-organization/<%= organization.organization_id %>"
-                class="card-action"
-              >
-                Edit Organization
-              </a>
+              <% if (user && user.role_name === 'admin') { %>
+                <a
+                  href="/edit-organization/<%= organization.organization_id %>"
+                  class="card-action">
+                  Edit Organization
+                </a>
+              <% } %>  
             </div>
           </div>
           
