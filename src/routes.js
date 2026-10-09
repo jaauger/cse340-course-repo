@@ -23,13 +23,13 @@ import { showCategoriesPage,
 } from './controllers/categories.js';
 
 import {
-    showOrganizationsPage,
-    showOrganizationDetailsPage,
-    showNewOrganizationForm,
-    processNewOrganizationForm,
-    organizationValidation,
-    showEditOrganizationForm,
-    processEditOrganizationForm
+        showOrganizationsPage,
+        showOrganizationDetailsPage,
+        showNewOrganizationForm,
+        processNewOrganizationForm,
+        organizationValidation,
+        showEditOrganizationForm,
+        processEditOrganizationForm
 } from './controllers/organizations.js';
 
 import { testErrorPage } from './controllers/errors.js';
@@ -44,6 +44,10 @@ import { showUserRegistrationForm,
          requireRole,
          showUsersPage
 } from './controllers/users.js';
+
+import { processAddVolunteer,
+         processRemoveVolunteer
+} from './controllers/volunteers.js';
 
 const router = express.Router();
 
@@ -84,6 +88,8 @@ router.post('/new-category', requireRole('admin'), categoryValidation, processNe
 router.post('/edit-category/:id', requireRole('admin'), categoryValidation, processEditCategoryForm);
 router.post('/register', processUserRegistrationForm);
 router.post('/login', processLoginForm);
+router.post('/volunteer/:projectId', requireLogin, processAddVolunteer);
+router.post('/remove-volunteer/:projectId', requireLogin, processRemoveVolunteer);
 
 
 // error-handling routes

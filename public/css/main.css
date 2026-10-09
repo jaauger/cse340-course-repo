@@ -645,6 +645,80 @@ form button[type="submit"]:focus {
   margin-bottom: 1.5rem;
   color: #52606d;
 }
+
+.volunteer-projects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.volunteer-project {
+    position: relative;
+    border-radius: 0.5rem;
+}
+
+/* Main project link */
+.volunteer-project > .button {
+    display: block;
+    width: 100%;
+    padding-right: 3rem;
+    text-align: center;
+}
+
+/* Give the entire project one consistent hover effect */
+.volunteer-project:hover > .button {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
+}
+
+/* Position the remove form inside the project button */
+.volunteer-remove {
+    position: absolute;
+    right: 0.6rem;
+    top: 50%;
+    transform: translateY(-50%);
+
+    margin: 0;
+    padding: 0;
+    width: auto;
+    height: auto;
+
+    background: none;
+    border: none;
+    box-shadow: none;
+}
+
+/* Small remove control */
+.volunteer-remove button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0;
+    padding: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    min-width: 0;
+    min-height: 0;
+
+    background: none;
+    color: white;
+    border: none;
+    box-shadow: none;
+
+    cursor: pointer;
+    font-size: 0.9rem;
+    line-height: 1;
+}
+
+/* Don't give the X its own button hover appearance */
+.volunteer-remove button:hover {
+    background: none;
+    box-shadow: none;
+    transform: none;
+}
+
 /* =========================
    Footer
    ========================= */

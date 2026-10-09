@@ -27,13 +27,42 @@
         </div>
     </section>
 
+    <section class="account-panel">
+        <h2>Project Volunteer Information</h2>
+
+        <div>
+            <% if (volunteerProjects.length > 0) { %>
+                <p>You have volunteered for the following projects:</p>
+                <div class="volunteer-projects">
+                    <% volunteerProjects.forEach((project) => { %>
+                        <div class="volunteer-project">
+                        <a href="./project/<%= project.project_id %>" class="button primary"><%= project.name %></a>
+
+                        <form class="volunteer-remove"
+                              action="/remove-volunteer/<%= project.project_id %>"
+                              method="POST">
+
+                              <input type="hidden" name="redirectTo" value="dashboard">
+                              
+                              <button type="submit" aria-label="Remove <%= project.name %> from my volunteer projects">x</button>
+                        </form>
+
+                </div>        
+                    <% }); %>
+                </div>
+            <% } else { %>
+                <p>You have not volunteered for any projects</p>
+            <% } %>
+        </div>
+    </section>
+
     <% if (role === 'admin') { %>
         <section class="admin-panel">
-        <h2>Administration</h2>
-        <p>Manage administrative features for the system.</p>
+            <h2>Administration</h2>
+            <p>Manage administrative features for the system.</p>
 
-        <a href="/users" class="button primary">System Users</a>
-    </section>
+            <a href="/users" class="button primary">System Users</a>
+        </section>
     <% } %>
 </main>
 
